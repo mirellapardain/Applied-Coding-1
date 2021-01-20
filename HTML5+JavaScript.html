@@ -1,0 +1,34 @@
+ <!DOCTYPE html>
+ <html lang="en-US">
+   <head>
+     <meta charset="utf-8">
+     <title>Apply JavaScript example</title>
+	 <script>
+	   document.addEventListener("DOMContentLoaded", function() {
+        function createParagraph() {
+          let sammakko = document.createElement('p');
+          sammakko.textContent = 'You clicked the button!';
+		  let rupikonna = document.createElement ('button');
+		  rupikonna.textContent = 'jipii!';
+          document.body.appendChild(sammakko);
+		  sammakko.appendChild(rupikonna);
+		  rupikonna.addEventListener('click', createParagraph);
+         }
+
+         const buttons = document.querySelectorAll('button');
+
+         for(let i = 0; i < buttons.length ; i++) {
+          buttons[i].addEventListener('click', createParagraph);
+         }
+        });
+
+     </script>
+    </head>
+    <body>
+       <button>Click me</button>
+	   <p>You clicked the button!
+	     <button>A</button>
+		 Lisäteksti.
+	   </p>
+    </body>
+ </html>
